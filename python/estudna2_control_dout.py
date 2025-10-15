@@ -4,9 +4,9 @@ import requests
 """
 Change these values to your own credentials and device serial number
 """
-USERNAME = "simon.stej@gmail.com"
-PASSWORD = "polkpolk1"
-SN = "SF025001"
+USERNAME = "YOUR_USERNAME"
+PASSWORD = "YOUR_PASSWORD"
+SN = "YOUR_SN"
 
 """
 All API endpoints: https://cml5.seapraha.cz/apiv2/docs#/
@@ -167,6 +167,7 @@ def eStudna2_toggle_dout(dout_number: int) -> bool:
     dout_v_value = tb.get_telemetry(f"dout{dout_number}_v")
     new_value= True if dout_v_value == "0" else False
     tb.set_dout(dout_number, new_value)
+    print(f"Toggled dout{dout_number} to" ,"ON" if new_value else "OFF")
 
 
 #get dout1 raw value
